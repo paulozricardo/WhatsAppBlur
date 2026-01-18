@@ -1,0 +1,80 @@
+/* ========================================
+   LISTA DE CONVERSAS - Configuravel
+   ======================================== */
+
+/* Seletores base para a lista de conversas */
+/* Item da lista de conversas */
+div[aria-label="Lista de conversas"] > div > div {
+  /* Container do chat - nao aplicar blur aqui */
+}
+
+/* --- ICONE / FOTO DO CONTATO --- */
+
+/* Ocultar sempre */
+body.blur-icon-always div[aria-label="Lista de conversas"] img[draggable="false"] {
+  filter: blur(5px);
+}
+
+/* Ocultar parcialmente (hover revela) */
+body.blur-icon-partial div[aria-label="Lista de conversas"] img[draggable="false"] {
+  filter: blur(5px);
+  transition: filter 0.2s;
+}
+body.blur-icon-partial div[aria-label="Lista de conversas"] > div > div:hover img[draggable="false"] {
+  filter: none;
+}
+
+/* Exibir sempre - nao precisa de regra */
+
+
+/* --- NOME / NUMERO DO CONTATO --- */
+
+/* Ocultar sempre */
+body.blur-name-always div[aria-label="Lista de conversas"] span[dir="auto"][title] {
+  filter: blur(5px);
+}
+
+/* Ocultar parcialmente (hover revela) */
+body.blur-name-partial div[aria-label="Lista de conversas"] span[dir="auto"][title] {
+  filter: blur(5px);
+  transition: filter 0.2s;
+}
+body.blur-name-partial div[aria-label="Lista de conversas"] > div > div:hover span[dir="auto"][title] {
+  filter: none;
+}
+
+/* Exibir sempre - nao precisa de regra */
+
+
+/* --- ULTIMA MENSAGEM --- */
+
+/* Ocultar sempre */
+body.blur-message-always div[aria-label="Lista de conversas"] span[title]:not([dir="auto"][title]) {
+  filter: blur(5px);
+}
+
+/* Ocultar parcialmente (hover revela) */
+body.blur-message-partial div[aria-label="Lista de conversas"] span[title]:not([dir="auto"][title]) {
+  filter: blur(5px);
+  transition: filter 0.2s;
+}
+body.blur-message-partial div[aria-label="Lista de conversas"] > div > div:hover span[title]:not([dir="auto"][title]) {
+  filter: none;
+}
+
+/* Exibir sempre - nao precisa de regra */
+
+
+/* ========================================
+   MENSAGENS DO CHAT - Comportamento fixo
+   ======================================== */
+
+/* Cada mensagem individual - blur com hover para revelar */
+div[role="row"] {
+  filter: blur(5px);
+  transition: filter 0.2s;
+}
+
+div[role="row"]:hover {
+  filter: none;
+}

@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "WhatsAppBlur",
+  "version": "2.0",
+  "description": "Aplica blur nas conversas do WhatsApp Web para privacidade",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "css": ["style.css"],
+      "js": ["content.js"]
+    }
+  ]
+}
