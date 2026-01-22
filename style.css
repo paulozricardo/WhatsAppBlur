@@ -1,3 +1,8 @@
+/* Variavel de intensidade do blur */
+:root {
+  --blur-intensity: 5px;
+}
+
 /* ========================================
    LISTA DE CONVERSAS - Configuravel
    ======================================== */
@@ -12,12 +17,12 @@ div[aria-label="Lista de conversas"] > div > div {
 
 /* Ocultar sempre */
 body.blur-icon-always div[aria-label="Lista de conversas"] img[draggable="false"] {
-  filter: blur(5px);
+  filter: blur(var(--blur-intensity));
 }
 
 /* Ocultar parcialmente (hover revela) */
 body.blur-icon-partial div[aria-label="Lista de conversas"] img[draggable="false"] {
-  filter: blur(5px);
+  filter: blur(var(--blur-intensity));
   transition: filter 0.2s;
 }
 body.blur-icon-partial div[aria-label="Lista de conversas"] > div > div:hover img[draggable="false"] {
@@ -31,12 +36,12 @@ body.blur-icon-partial div[aria-label="Lista de conversas"] > div > div:hover im
 
 /* Ocultar sempre */
 body.blur-name-always div[aria-label="Lista de conversas"] span[dir="auto"][title] {
-  filter: blur(5px);
+  filter: blur(var(--blur-intensity));
 }
 
 /* Ocultar parcialmente (hover revela) */
 body.blur-name-partial div[aria-label="Lista de conversas"] span[dir="auto"][title] {
-  filter: blur(5px);
+  filter: blur(var(--blur-intensity));
   transition: filter 0.2s;
 }
 body.blur-name-partial div[aria-label="Lista de conversas"] > div > div:hover span[dir="auto"][title] {
@@ -50,12 +55,12 @@ body.blur-name-partial div[aria-label="Lista de conversas"] > div > div:hover sp
 
 /* Ocultar sempre */
 body.blur-message-always div[aria-label="Lista de conversas"] span[title]:not([dir="auto"][title]) {
-  filter: blur(5px);
+  filter: blur(var(--blur-intensity));
 }
 
 /* Ocultar parcialmente (hover revela) */
 body.blur-message-partial div[aria-label="Lista de conversas"] span[title]:not([dir="auto"][title]) {
-  filter: blur(5px);
+  filter: blur(var(--blur-intensity));
   transition: filter 0.2s;
 }
 body.blur-message-partial div[aria-label="Lista de conversas"] > div > div:hover span[title]:not([dir="auto"][title]) {
@@ -66,15 +71,30 @@ body.blur-message-partial div[aria-label="Lista de conversas"] > div > div:hover
 
 
 /* ========================================
-   MENSAGENS DO CHAT - Comportamento fixo
+   MENSAGENS DO CHAT - Configuravel
    ======================================== */
 
-/* Cada mensagem individual - blur com hover para revelar */
-div[role="row"] {
-  filter: blur(5px);
-  transition: filter 0.2s;
+/* Ocultar sempre */
+body.blur-chat-always #main div[role="row"] {
+  filter: blur(var(--blur-intensity));
 }
-
-div[role="row"]:hover {
+body.blur-chat-always #main div[role="row"].blur-revealed {
   filter: none;
 }
+
+/* Ocultar parcialmente (hover revela) */
+body.blur-chat-partial #main div[role="row"] {
+  filter: blur(var(--blur-intensity));
+  transition: filter 0.2s;
+}
+body.blur-chat-partial #main div[role="row"]:hover,
+body.blur-chat-partial #main div[role="row"].blur-revealed {
+  filter: none;
+}
+
+/* Desabilitar blur durante carregamento do chat */
+body.blur-chat-loading #main div[role="row"] {
+  filter: none !important;
+}
+
+/* Exibir sempre - nao precisa de regra */
