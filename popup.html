@@ -1,165 +1,174 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      width: 280px;
-      padding: 16px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      font-size: 14px;
-      color: #1a1a1a;
-      margin: 0;
-    }
-    h1 {
-      font-size: 16px;
-      margin: 0 0 16px 0;
-      padding-bottom: 8px;
-      border-bottom: 1px solid #e0e0e0;
-    }
-    .config-group {
-      margin-bottom: 14px;
-    }
-    label {
-      display: block;
-      font-weight: 500;
-      margin-bottom: 4px;
-    }
-    select {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 13px;
-      background: #fff;
-      cursor: pointer;
-    }
-    select:focus {
-      outline: none;
-      border-color: #25D366;
-    }
-    .status {
-      margin-top: 12px;
-      padding: 8px;
-      background: #e8f5e9;
-      border-radius: 4px;
-      font-size: 12px;
-      color: #2e7d32;
-      text-align: center;
-      display: none;
-    }
-    .status.show {
-      display: block;
-    }
-    .section-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: #666;
-      margin: 16px 0 10px 0;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .section-title:first-of-type {
-      margin-top: 0;
-    }
-    .range-group {
-      margin-bottom: 14px;
-    }
-    .range-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 6px;
-    }
-    .range-header label {
-      margin-bottom: 0;
-    }
-    .range-value {
-      font-size: 12px;
-      color: #666;
-      background: #f0f0f0;
-      padding: 2px 8px;
-      border-radius: 3px;
-    }
-    input[type="range"] {
-      width: 100%;
-      height: 6px;
-      border-radius: 3px;
-      background: #e0e0e0;
-      outline: none;
-      -webkit-appearance: none;
-      cursor: pointer;
-    }
-    input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: #25D366;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <h1>WhatsApp Blur</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        width: 280px;
+        padding: 16px;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 14px;
+        color: #1a1a1a;
+        margin: 0;
+      }
+      h1 {
+        font-size: 16px;
+        margin: 0 0 16px 0;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #e0e0e0;
+      }
+      .config-group {
+        margin-bottom: 14px;
+      }
+      label {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 4px;
+      }
+      select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 13px;
+        background: #fff;
+        cursor: pointer;
+      }
+      select:focus {
+        outline: none;
+        border-color: #25d366;
+      }
+      .status {
+        margin-top: 12px;
+        padding: 8px;
+        background: #e8f5e9;
+        border-radius: 4px;
+        font-size: 12px;
+        color: #2e7d32;
+        text-align: center;
+        display: none;
+      }
+      .status.show {
+        display: block;
+      }
+      .section-title {
+        font-size: 13px;
+        font-weight: 600;
+        color: #666;
+        margin: 16px 0 10px 0;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .section-title:first-of-type {
+        margin-top: 0;
+      }
+      .range-group {
+        margin-bottom: 14px;
+      }
+      .range-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6px;
+      }
+      .range-header label {
+        margin-bottom: 0;
+      }
+      .range-value {
+        font-size: 12px;
+        color: #666;
+        background: #f0f0f0;
+        padding: 2px 8px;
+        border-radius: 3px;
+      }
+      input[type="range"] {
+        width: 100%;
+        height: 6px;
+        border-radius: 3px;
+        background: #e0e0e0;
+        outline: none;
+        -webkit-appearance: none;
+        appearance: none;
+        cursor: pointer;
+      }
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #25d366;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>WhatsApp Blur</h1>
 
-  <div class="section-title">Intensidade</div>
+    <div class="section-title">Intensidade</div>
 
-  <div class="range-group">
-    <div class="range-header">
-      <label for="blurIntensity">Nivel do blur</label>
-      <span class="range-value" id="blurValue">5px</span>
+    <div class="range-group">
+      <div class="range-header">
+        <label for="blurIntensity">Nivel do blur</label>
+        <span class="range-value" id="blurValue">5px</span>
+      </div>
+      <input type="range" id="blurIntensity" min="1" max="15" value="5" />
     </div>
-    <input type="range" id="blurIntensity" min="1" max="15" value="5">
-  </div>
 
-  <div class="section-title">Lista de Conversas</div>
+    <div class="section-title">Lista de Conversas</div>
 
-  <div class="config-group">
-    <label for="icon">Foto do contato</label>
-    <select id="icon">
-      <option value="always">Ocultar sempre</option>
-      <option value="partial" selected>Ocultar parcialmente (hover revela)</option>
-      <option value="never">Exibir sempre</option>
-    </select>
-  </div>
+    <div class="config-group">
+      <label for="icon">Foto do contato</label>
+      <select id="icon">
+        <option value="always">Ocultar sempre</option>
+        <option value="partial" selected>
+          Ocultar parcialmente (hover revela)
+        </option>
+        <option value="never">Exibir sempre</option>
+      </select>
+    </div>
 
-  <div class="config-group">
-    <label for="name">Nome / Numero</label>
-    <select id="name">
-      <option value="always">Ocultar sempre</option>
-      <option value="partial" selected>Ocultar parcialmente (hover revela)</option>
-      <option value="never">Exibir sempre</option>
-    </select>
-  </div>
+    <div class="config-group">
+      <label for="name">Nome / Numero</label>
+      <select id="name">
+        <option value="always">Ocultar sempre</option>
+        <option value="partial" selected>
+          Ocultar parcialmente (hover revela)
+        </option>
+        <option value="never">Exibir sempre</option>
+      </select>
+    </div>
 
-  <div class="config-group">
-    <label for="message">Ultima mensagem</label>
-    <select id="message">
-      <option value="always">Ocultar sempre</option>
-      <option value="partial" selected>Ocultar parcialmente (hover revela)</option>
-      <option value="never">Exibir sempre</option>
-    </select>
-  </div>
+    <div class="config-group">
+      <label for="message">Ultima mensagem</label>
+      <select id="message">
+        <option value="always">Ocultar sempre</option>
+        <option value="partial" selected>
+          Ocultar parcialmente (hover revela)
+        </option>
+        <option value="never">Exibir sempre</option>
+      </select>
+    </div>
 
-  <div class="section-title">Blur Localizado</div>
+    <div class="section-title">Blur Localizado</div>
 
-  <div class="config-group">
-    <label for="chatMessages">Mensagens do chat</label>
-    <select id="chatMessages">
-      <option value="always">Ocultar sempre</option>
-      <option value="partial" selected>Ocultar parcialmente (hover revela)</option>
-      <option value="never">Exibir sempre</option>
-    </select>
-  </div>
+    <div class="config-group">
+      <label for="chatMessages">Mensagens do chat</label>
+      <select id="chatMessages">
+        <option value="always">Ocultar sempre</option>
+        <option value="partial" selected>
+          Ocultar parcialmente (hover revela)
+        </option>
+        <option value="never">Exibir sempre</option>
+      </select>
+    </div>
 
-  <p style="font-size: 11px; color: #888; text-align: center; margin: 16px 0 4px;">Clique duplo em uma mensagem para revelar o conteudo.</p>
+    <div class="status" id="status">Configuracoes salvas!</div>
 
-  <div class="status" id="status">Configuracoes salvas!</div>
-
-  <script src="popup.js"></script>
-</body>
+    <script src="popup.js"></script>
+  </body>
 </html>
