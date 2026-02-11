@@ -20,11 +20,14 @@ Para cada elemento da lista de conversas (foto, nome, ultima mensagem), voce pod
 
 ## Instalacao
 
-1. Baixe ou clone este repositorio
-2. Abra `chrome://extensions/` no Chrome
-3. Ative o **Modo do desenvolvedor** (canto superior direito)
-4. Clique em **Carregar sem compactacao**
-5. Selecione a pasta do projeto
+1. Baixe o `WhatsAppBlur.zip` na pagina de [Releases](https://github.com/paulozricardo/WhatsAppBlur/releases/latest)
+2. Extraia o conteudo do ZIP em uma pasta
+3. Abra `chrome://extensions/` no Chrome
+4. Ative o **Modo do desenvolvedor** (canto superior direito)
+5. Clique em **Carregar sem compactacao**
+6. Selecione a pasta extraida
+
+> **Importante:** Nao apague a pasta apos instalar. O Chrome referencia os arquivos locais e a extensao para de funcionar se eles forem removidos.
 
 ## Como usar
 
