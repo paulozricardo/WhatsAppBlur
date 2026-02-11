@@ -74,27 +74,23 @@ body.blur-message-partial div[aria-label="Lista de conversas"] > div > div:hover
    MENSAGENS DO CHAT - Configuravel
    ======================================== */
 
-/* Ocultar sempre */
-body.blur-chat-always #main div[role="row"] {
+/* Ocultar sempre - blur nos filhos para nao afetar scroll */
+body.blur-chat-always #main div[role="row"] > * {
   filter: blur(var(--blur-intensity));
 }
-body.blur-chat-always #main div[role="row"].blur-revealed {
+body.blur-chat-always #main div[role="row"].blur-revealed > * {
   filter: none;
 }
 
-/* Ocultar parcialmente (hover revela) */
-body.blur-chat-partial #main div[role="row"] {
+/* Ocultar parcialmente (hover revela) - blur nos filhos para nao afetar scroll */
+body.blur-chat-partial #main div[role="row"] > * {
   filter: blur(var(--blur-intensity));
   transition: filter 0.2s;
 }
-body.blur-chat-partial #main div[role="row"]:hover,
-body.blur-chat-partial #main div[role="row"].blur-revealed {
+body.blur-chat-partial #main div[role="row"]:hover > *,
+body.blur-chat-partial #main div[role="row"].blur-revealed > * {
   filter: none;
 }
 
-/* Desabilitar blur durante carregamento do chat */
-body.blur-chat-loading #main div[role="row"] {
-  filter: none !important;
-}
-
 /* Exibir sempre - nao precisa de regra */
+

@@ -45,29 +45,3 @@ document.addEventListener('dblclick', (e) => {
   }
 });
 
-// Observar mudancas no chat para aplicar blur com delay
-// Isso permite que o WhatsApp faca o scroll antes do blur ser aplicado
-let chatBlurTimeout = null;
-let lastChatId = null;
-
-const observer = new MutationObserver(() => {
-  // Pegar o nome/titulo do chat atual como identificador
-  const chatTitle = document.querySelector('#main header span[title]');
-  const chatId = chatTitle ? chatTitle.getAttribute('title') : null;
-
-  if (chatId && chatId !== lastChatId) {
-    lastChatId = chatId;
-
-    // Remover blur temporariamente
-    document.body.classList.add('blur-chat-loading');
-
-    // Aplicar blur apos delay maior para garantir que o scroll aconteceu
-    clearTimeout(chatBlurTimeout);
-    chatBlurTimeout = setTimeout(() => {
-      document.body.classList.remove('blur-chat-loading');
-    }, 800);
-  }
-});
-
-// Observar mudancas no DOM para detectar troca de chat
-observer.observe(document.body, { childList: true, subtree: true });
